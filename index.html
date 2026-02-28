@@ -120,9 +120,9 @@
           </div> -->
 
           <!-- <div class="column has-text-centered"> -->
-            <div class="publication-links">
+            <!-- <div class="publication-links"> -->
               <!-- PDF Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://arxiv.org/pdf/2011.12948"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -139,9 +139,9 @@
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Video Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -149,9 +149,9 @@
                   </span>
                   <span>Video</span>
                 </a>
-              </span>
+              </span> -->
               <!-- Code Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://github.com/google/nerfies"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -159,9 +159,9 @@
                   </span>
                   <span>Code</span>
                   </a>
-              </span>
+              </span> -->
               <!-- Dataset Link. -->
-              <span class="link-block">
+              <!-- <span class="link-block">
                 <a href="https://github.com/google/nerfies/releases/tag/0.1"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
@@ -169,7 +169,7 @@
                   </span>
                   <span>Data</span>
                   </a>
-            </div>
+            </div> -->
 
           </div>
         </div>
@@ -182,7 +182,7 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
+        <source src="./static/videos/real-example.mp4"
                 type="video/mp4">
       </video>
     </div>
@@ -194,8 +194,26 @@
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+        <div class="item item-example-1">
+          <video poster="" id="example-1" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/real-example.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-example-2">
+          <video poster="" id="example-2" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/real-example.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-example-3">
+          <video poster="" id="example-3" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/real-example.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-example-4">
+          <video poster="" id="example-4" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/real-example.mp4"
                     type="video/mp4">
           </video>
@@ -250,6 +268,28 @@
       </div>
     </div> -->
     <!--/ Paper video. -->
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Overview of ClutterBench</h2> 
+
+        <div class="column has-text-centered">
+          <img src="./static/images/clutterbench.jpg"
+            class="centered-method"
+            alt="method">
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            The top half shows simulated environments across four task suites: 
+            Orderly Clutter, Random Clutter, Complex Clutter, and Temporal Dynamic. 
+            For each suite, we show three representative environments corresponding to different difficulty levels or 
+            distinct scene instances within that suite. 
+            In the Temporal Dynamic suite, arrows indicate externally induced motions, and each image represents a 
+            separate task instance rather than different stages of a single task.
+            The bottom half shows representative real-world environments.
+          </p>
+        </div>
   </div>
 </section>
 
@@ -257,9 +297,7 @@
 <section class="section">
   <div class="container is-max-desktop">
 
-    <div class="columns is-centered">
-
-    <h2 class="title is-4">Real World Experiments</h2>
+    <h2 class="title is-3">Real World Experiments</h2>
         <div class="content has-text-justified">
           <p>
             TODO
@@ -272,7 +310,7 @@
         </div>
 
 
-    <h2 class="title is-4">Simulation Experiments</h2>
+    <h2 class="title is-3">Simulation Experiments</h2>
         <div class="content has-text-justified">
           <p>
             TODO
@@ -317,7 +355,7 @@
 
         </div>
       </div>
-    </div> -->
+    -->
     <!--/ Matting. -->
 
 
