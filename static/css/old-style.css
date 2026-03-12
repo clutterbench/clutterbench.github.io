@@ -1,0 +1,360 @@
+/* ================================================================
+   ClutterBench Project Page — Stylesheet
+   ================================================================ */
+
+/* ── Variables ── */
+:root {
+  --bg:        #ffffff;
+  --surface:   #f8f9fa;
+  --border:    #e0e0e0;
+  --accent:    #f97316;
+  --accent-dk: #ea580c;
+  --text:      #212121;
+  --muted:     #5f6368;
+  --success:   #34a853;
+  --danger:    #ea4335;
+  --tag-bg:    #fff7ed;
+  --tag-color: #c2410c;
+}
+
+/* ── Utilities ── */
+.sub { font-size: .74rem; color: var(--muted); }
+
+.subsection-title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 1rem; font-weight: 500;
+  margin: 2rem 0 .6rem;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html  { scroll-behavior: smooth; }
+body  {
+  font-family: 'Noto Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+}
+
+/* ── Layout ── */
+.container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+section    { padding: 3.5rem 0; }
+hr         { border: none; border-top: 1px solid var(--border); }
+
+/* ── Typography ── */
+.section-title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 1.55rem; font-weight: 500;
+  color: var(--text);
+  margin-bottom: 1rem;
+  padding-bottom: .65rem;
+  border-bottom: 2px solid var(--border);
+}
+
+p.lead {
+  color: var(--muted);
+  font-size: .92rem;
+  margin-bottom: 1rem;
+}
+
+/* ================================================================
+   Navigation
+   ================================================================ */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  padding: .7rem 2rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: 'Source Code Pro', monospace;
+  font-size: .8rem; color: var(--accent); letter-spacing: .1em;
+}
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
+.nav-links a {
+  font-size: .82rem; color: var(--muted);
+  text-decoration: none; font-weight: 500;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--accent); }
+
+/* ================================================================
+   Hero
+   ================================================================ */
+.hero { padding: 3rem 0 2rem; text-align: center; }
+
+.conference-tag {
+  display: inline-block;
+  background: #fce8e6; color: #c5221f;
+  padding: .2rem .85rem; border-radius: 20px;
+  font-size: .83rem; font-weight: 500; margin-bottom: 1.2rem;
+}
+
+.hero-title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(1.55rem, 3.2vw, 2.2rem);
+  font-weight: 500; line-height: 1.3;
+  max-width: 800px; margin: 0 auto 1.4rem;
+}
+
+.anon-badge {
+  display: inline-block;
+  background: var(--tag-bg); color: var(--tag-color);
+  padding: .2rem .85rem; border-radius: 20px;
+  font-size: .85rem; font-weight: 500;
+}
+
+/* ── Buttons ── */
+.hero-buttons {
+  display: flex; flex-wrap: wrap;
+  gap: .55rem; justify-content: center; margin-top: 1.4rem;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .5rem 1.15rem;
+  font-size: .84rem; font-weight: 500;
+  border-radius: 4px; text-decoration: none;
+  border: 1px solid var(--border);
+  color: var(--text); background: var(--bg);
+  transition: all .15s; cursor: pointer; font-family: inherit;
+}
+.btn:hover        { background: var(--surface); border-color: #aaa; }
+.btn-primary      { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-primary:hover { background: var(--accent-dk); border-color: var(--accent-dk); }
+
+/* ================================================================
+   Video Placeholders
+   ================================================================ */
+.video-wrap {
+  margin-top: 1.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px; overflow: hidden;
+}
+.video-placeholder {
+  aspect-ratio: 16/9;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: .5rem;
+  background: #f1f3f4; color: var(--muted); font-size: .9rem;
+}
+.play-btn {
+  width: 50px; height: 50px; border-radius: 50%;
+  background: rgba(0,0,0,.08);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+}
+.video-caption {
+  padding: .55rem 1rem;
+  font-size: .78rem; color: var(--muted);
+  border-top: 1px solid var(--border); font-style: italic;
+}
+.video-grid  { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+.video-card  { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.video-card-label {
+  padding: .5rem .9rem;
+  font-size: .78rem; color: var(--muted);
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center; gap: .4rem;
+}
+.dot       { width: 7px; height: 7px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.dot-sim   { background: #f97316; }
+.dot-real  { background: #ea4335; }
+
+/* ================================================================
+   Abstract
+   ================================================================ */
+.abstract-text             { font-size: .95rem; line-height: 1.8; max-width: 840px; }
+.abstract-text p + p       { margin-top: .9rem; }
+strong.hl                  { color: var(--accent); }
+
+/* ── Stats bar ── */
+.stats-row {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 8px; overflow: hidden; margin-top: 2rem;
+}
+.stat-cell  { background: var(--bg); padding: 1.2rem; text-align: center; }
+.stat-num   { font-family: 'Google Sans', sans-serif; font-size: 1.9rem; color: var(--accent); font-weight: 500; line-height: 1; }
+.stat-label { font-size: .76rem; color: var(--muted); margin-top: .3rem; }
+
+/* ================================================================
+   Overview Figure
+   ================================================================ */
+.overview-img {
+  width: 100%; border-radius: 6px;
+  border: 1px solid var(--border);
+  display: block;
+}
+.fig-caption {
+  font-size: .77rem; color: var(--muted);
+  margin-top: .55rem; font-style: italic; text-align: center;
+}
+
+/* ================================================================
+   Benchmark — Suite Cards
+   ================================================================ */
+.suite-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; margin-top: 1.5rem; }
+.suite-card {
+  border: 1px solid var(--border);
+  border-radius: 8px; padding: 1.2rem;
+  border-top: 3px solid transparent;
+}
+.suite-card.orderly  { border-top-color: #e86a6a; }
+.suite-card.random   { border-top-color: #f1b17c; }
+.suite-card.complex  { border-top-color: #84f081; }
+.suite-card.temporal { border-top-color: #8bace6; }
+.suite-icon  { font-size: 1.3rem; margin-bottom: .55rem; }
+.suite-name  { font-family: 'Google Sans', sans-serif; font-size: .93rem; font-weight: 500; margin-bottom: .3rem; }
+.suite-desc  { font-size: .79rem; color: var(--muted); line-height: 1.6; }
+.suite-meta  { margin-top: .65rem; font-size: .73rem; color: var(--muted); font-family: 'Source Code Pro', monospace; }
+
+/* ── Platform split (sim vs real) ── */
+.platform-split { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.5rem; }
+.platform-card  { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.platform-header {
+  padding: .6rem 1rem;
+  font-family: 'Google Sans', sans-serif;
+  font-size: .84rem; font-weight: 500;
+  display: flex; align-items: center; gap: .45rem;
+}
+.platform-header.sim  { background: #fff7ed; color: #c2410c; }
+.platform-header.real { background: #fce8e6; color: #c5221f; }
+.platform-detail {
+  padding: .8rem 1rem;
+  font-size: .81rem; color: var(--muted); line-height: 1.75;
+  border-top: 1px solid var(--border);
+}
+.platform-detail strong { color: var(--text); font-weight: 600; }
+
+/* ================================================================
+   Note / Callout Boxes
+   ================================================================ */
+.note-box {
+  background: var(--tag-bg);
+  border-left: 3px solid var(--accent);
+  padding: .7rem 1rem;
+  border-radius: 0 4px 4px 0;
+  font-size: .82rem; color: var(--tag-color);
+  margin-top: 1rem;
+}
+.note-box.danger  { background: #fce8e6; border-color: var(--danger);  color: #c5221f; }
+.note-box.success { background: #e6f4ea; border-color: var(--success); color: #137333; }
+
+/* ================================================================
+   Tabs
+   ================================================================ */
+.tab-group {
+  display: flex; border-bottom: 2px solid var(--border); margin-bottom: 1.1rem;
+}
+.tab {
+  padding: .5rem 1.1rem;
+  font-size: .84rem; font-weight: 500; color: var(--muted);
+  cursor: pointer; border: none; background: none;
+  border-bottom: 2px solid transparent; margin-bottom: -2px;
+  transition: all .15s; font-family: inherit;
+}
+.tab.active        { color: var(--accent); border-bottom-color: var(--accent); }
+.tab:hover:not(.active) { color: var(--accent); }
+
+/* ================================================================
+   Tables
+   ================================================================ */
+.table-wrap   { overflow-x: auto; }
+table         { width: 100%; border-collapse: collapse; font-size: .84rem; }
+thead tr      { border-bottom: 2px solid var(--border); }
+thead th      { padding: .55rem .9rem; text-align: left; font-size: .77rem; font-weight: 600; color: var(--muted); white-space: nowrap; }
+tbody tr      { border-bottom: 1px solid var(--border); }
+tbody tr:last-child { border-bottom: none; }
+tbody tr:hover      { background: #f8f9fa; }
+tbody td            { padding: .55rem .9rem; color: var(--muted); }
+tbody td:first-child {
+  color: var(--text); font-weight: 500;
+  font-family: 'Source Code Pro', monospace; font-size: .81rem;
+}
+.best { color: var(--accent); font-weight: 700; }
+
+/* ================================================================
+   Real-World Results
+   ================================================================ */
+.rw-grid        { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; margin-top: 1.5rem; }
+.rw-card        { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.rw-card-header { padding: .6rem 1rem; background: #fce8e6; color: #c5221f; font-family: 'Google Sans', sans-serif; font-size: .83rem; font-weight: 500; }
+
+/* ================================================================
+   Fine-tuning
+   ================================================================ */
+.ft-note {
+  background: #e6f4ea; border-left: 3px solid var(--success);
+  padding: .7rem 1rem; border-radius: 0 4px 4px 0;
+  font-size: .82rem; color: #137333; margin-bottom: 1.1rem;
+}
+
+/* ================================================================
+   Extendable Cards
+   ================================================================ */
+.extend-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; margin-top: 1.5rem; }
+.extend-card { border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; }
+.extend-card h4 {
+  font-family: 'Google Sans', sans-serif;
+  font-size: .92rem; font-weight: 500; margin-bottom: .45rem;
+  display: flex; align-items: center; gap: .35rem;
+}
+.extend-card p    { font-size: .81rem; color: var(--muted); max-width: 100%; }
+.code-snippet {
+  margin-top: .7rem; background: #f1f3f4; border-radius: 4px;
+  padding: .6rem .85rem;
+  font-family: 'Source Code Pro', monospace;
+  font-size: .73rem; color: #5f6368; line-height: 1.75;
+}
+
+/* ================================================================
+   Key Findings
+   ================================================================ */
+.findings-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; margin-top: 1.5rem; }
+.finding-card  { border: 1px solid var(--border); border-radius: 8px; padding: 1.2rem; }
+.finding-num   { font-family: 'Google Sans', sans-serif; font-size: 1.9rem; color: #e0e0e0; line-height: 1; margin-bottom: .35rem; }
+.finding-title { font-weight: 600; font-size: .87rem; margin-bottom: .3rem; }
+.finding-body  { font-size: .81rem; color: var(--muted); line-height: 1.65; }
+
+/* ================================================================
+   Citation
+   ================================================================ */
+.citation-block {
+  background: #f8f9fa; border: 1px solid var(--border);
+  border-radius: 8px; padding: 1.25rem; margin-top: 1.1rem;
+  font-family: 'Source Code Pro', monospace;
+  font-size: .77rem; line-height: 1.9; color: var(--muted);
+  position: relative; white-space: pre-wrap;
+}
+.copy-btn {
+  position: absolute; top: .75rem; right: .75rem;
+  background: var(--accent); color: #fff; border: none;
+  padding: .28rem .7rem; border-radius: 4px;
+  font-size: .73rem; cursor: pointer; font-family: inherit;
+  transition: background .15s;
+}
+.copy-btn:hover { background: var(--accent-dk); }
+
+/* ================================================================
+   Footer
+   ================================================================ */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 2rem; text-align: center;
+  font-size: .79rem; color: var(--muted);
+}
+footer a { color: var(--accent); text-decoration: none; }
+
+/* ================================================================
+   Responsive
+   ================================================================ */
+@media (max-width: 768px) {
+  .suite-grid, .findings-grid            { grid-template-columns: 1fr 1fr; }
+  .platform-split, .rw-grid,
+  .extend-grid, .video-grid             { grid-template-columns: 1fr; }
+  .stats-row                            { grid-template-columns: 1fr 1fr; }
+  .nav-links                            { display: none; }
+  section                               { padding: 2.5rem 0; }
+}
