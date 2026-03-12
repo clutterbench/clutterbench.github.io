@@ -37,7 +37,7 @@ body  {
 }
 
 /* ── Layout ── */
-.container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+.container { max-width: 1000px; margin: 0 auto; padding: 2rem 2rem; }
 section    { padding: 1.5rem 0; }
 hr         { border: none; border-top: 1px solid var(--border); }
 
