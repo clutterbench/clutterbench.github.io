@@ -149,7 +149,8 @@ nav {
   font-size: .78rem; color: var(--muted);
   border-top: 1px solid var(--border); font-style: italic;
 }
-.video-grid  { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem; }
+.video-grid-4  { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 1.5rem; }
+.video-grid-3  { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
 .video-card  { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
 .video-card-label {
   /* padding: .5rem .9rem; */
@@ -184,8 +185,7 @@ strong.hl                  { color: var(--accent); }
    Overview Figure
    ================================================================ */
 .overview-img {
-  width: 100%; border-radius: 6px;
-  border: 1px solid var(--border);
+  width: 100%; 
   display: block;
 }
 .fig-caption {

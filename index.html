@@ -56,21 +56,12 @@
       </a>
     </div>
 
-    <!-- Teaser video -->
     <div class="video-wrap">
-      <!-- <div class="video-placeholder">
-        <div class="play-btn">▶</div>
-        <span>Teaser Video</span>
-        <span class="sub">Real-world demonstration · Franka Panda</span>
-      </div> -->
       <video controls autoplay muted loop playsinline style="width:100%; display:block;">
         <source src="./static/videos/clutterbench_video.mp4" type="video/mp4">
       </video>
-      <!-- <div class="video-caption">
-        ClutterBench real-world robot manipulation across orderly and random clutter configurations
-      </div> -->
     </div>
-  </div><!-- /hero -->
+  </div>
 
   <!-- ============================================================
        Abstract
@@ -93,48 +84,13 @@
       </p>
       <p>
         We evaluate 7 VLA models in simulation and 3 in the real-world, finding that even the best model achieves
-        below 60% average success rate across all clutter types —
+        below 60% average success rate across all clutter types -
         revealing fundamental limitations in task understanding, spatial reasoning, and interaction planning.
         Real-world evaluation confirms that model rankings and dominant failure modes are consistent
         across platforms.
       </p>
     </div>
-
-    <!-- <div class="stats-row">
-      <div class="stat-cell">
-        <div class="stat-num">88</div>
-        <div class="stat-label">Simulation Configs</div>
-      </div>
-      <div class="stat-cell">
-        <div class="stat-num">7 / 3</div>
-        <div class="stat-label">Models Sim / Real</div>
-      </div>
-      <div class="stat-cell">
-        <div class="stat-num">4</div>
-        <div class="stat-label">Task Suites</div>
-      </div>
-      <div class="stat-cell">
-        <div class="stat-num">&lt;60%</div>
-        <div class="stat-label">Best Zero-Shot SR</div>
-      </div>
-    </div> -->
   </section>
-
-  <!-- <section id="overview">
-    <h2 class="section-title">Benchmark Overview</h2>
-    <p class="lead">
-      Top rows: simulated environments across all four task suites.
-      Bottom row: representative real-world setups for Orderly and Random Clutter.
-    </p>
-    <img class="overview-img" src="images/overview.jpg"
-         alt="ClutterBench overview — four simulation task suites and real-world environments">
-    <p class="fig-caption">
-      Fig. 1 — For Temporal Dynamic Clutter, dashed arrows indicate externally induced motions.
-      Each image represents a separate task instance.
-    </p>
-  </section>
-
-  <hr> -->
 
   <!-- ============================================================
        Benchmark Design
@@ -153,39 +109,34 @@
         <div class="suite-icon">📦</div>
         <div class="suite-name">Orderly Clutter</div>
         <div class="suite-desc">Objects in a regular matrix. Tests basic collision avoidance as grid density and spacing tighten.</div>
-        <!-- <div class="suite-meta">24 configs · 5 levels · 2×2 → 4×4</div> -->
       </div>
       <div class="suite-card random">
         <div class="suite-icon">🌀</div>
         <div class="suite-name">Random Clutter</div>
         <div class="suite-desc">Irregular sector-ring obstacle layouts. Tests spatial reasoning by restricting approach angles.</div>
-        <!-- <div class="suite-meta">50 configs · 5 levels · 1–3 safe sectors</div> -->
       </div>
       <div class="suite-card complex">
         <div class="suite-icon">🗄️</div>
         <div class="suite-name">Complex Clutter</div>
         <div class="suite-desc">Furniture environments (cabinets, microwaves, shelves). Targets may be hidden inside structures.</div>
-        <!-- <div class="suite-meta">8 configs · 3 furniture types · sim only</div> -->
       </div>
       <div class="suite-card temporal">
         <div class="suite-icon">⏱️</div>
         <div class="suite-name">Temporal Dynamic</div>
         <div class="suite-desc">Mid-episode perturbations — drawers open, objects fall, doors occlude. Tests real-time adaptation.</div>
-        <!-- <div class="suite-meta">6 configs · dynamic events · sim only</div> -->
       </div>
     </div>
 
     <section id="overview" style="padding:0 0 2rem">
-      <!-- <h2 class="section-title">Benchmark Overview</h2> -->
       <h3 class="subsection-title">Benchmark Overview</h3>
       <p class="lead">
         Top rows: simulated environments across all four task suites.
-        Bottom row: representative real-world setups for Orderly and Random Clutter.
       </p>
-      <img class="overview-img" src="./static/images/overview.jpg"
+      <p class="lead">Bottom row: representative real-world setups for Orderly, Random, and Complex Clutter.</p>
+      <img class="overview-img" src="./static/images/clutterbench-figures.png"
            alt="ClutterBench overview — four simulation task suites and real-world environments">
       <p class="fig-caption">
-        Fig. 1 — For Temporal Dynamic Clutter, dashed arrows indicate externally induced motions.
+        For Temporal Dynamic Clutter, dashed arrows indicate externally induced motions.
         Each image represents a separate task instance.
       </p>
     </section>
@@ -218,7 +169,7 @@
         </div>
         <div class="platform-detail">
           <strong>Models:</strong> π0.5-DROID, π0-FAST-DROID, π0-DROID<br>
-          <strong>Suites:</strong> Orderly and Random Clutter only (3 levels each)<br>
+          <strong>Suites:</strong> Orderly, Random, Complex Clutter<br>
           <strong>Robot:</strong> Franka Panda (DROID checkpoints)
         </div>
       </div>
@@ -265,7 +216,7 @@
           </tbody>
         </table>
 
-        <div class="video-grid">
+        <div class="video-grid-4">
           <div class="video-card">
             <video controls muted loop playsinline style="width:100%; display:block;">
               <source src="./static/videos/openvlaOFT_orderly.mp4" type="video/mp4">
@@ -315,7 +266,7 @@
           </tbody>
         </table>
         
-        <div class="video-grid">
+        <div class="video-grid-4">
           <div class="video-card">
             <video controls muted loop playsinline style="width:100%; display:block;">
               <source src="./static/videos/openvlaOFT_random.mp4" type="video/mp4">
@@ -342,7 +293,7 @@
           </div>
           <div class="video-card">
             <video controls muted loop playsinline style="width:100%; display:block;">
-              <source src="./static/videos/pi05_sim_random_success_good_maneuvering.mov" type="video/mp4">
+              <source src="./static/videos/pi05_sim_random_success_good_maneuvering.mp4" type="video/mp4">
             </video>
             <div class="video-card-label">
               π0.5 · 4x
@@ -364,7 +315,7 @@
             <tr><td>WorldVLA</td>    <td>0.0%</td>               <td class="best">0.193</td> <td>900.0</td></tr>
           </tbody>
         </table>
-        <div class="video-grid">
+        <div class="video-grid-4">
           <div class="video-card">
             <video controls muted loop playsinline style="width:100%; display:block;">
               <source src="./static/videos/univla_compicated.mp4" type="video/mp4">
@@ -414,7 +365,7 @@
           </tbody>
         </table>
 
-        <div class="video-grid">
+        <div class="video-grid-4">
           <div class="video-card">
             <video controls muted loop playsinline style="width:100%; display:block;">
               <source src="./static/videos/univla_temporal.mp4" type="video/mp4">
@@ -450,76 +401,128 @@
         </div>
       </div>
       
-    </div><!-- /sim-tabs -->
-
-    <!-- Sim video placeholders -->
-    <!--<div class="video-grid">
-      <div class="video-card">
-        <video controls muted loop playsinline style="width:100%; display:block;">
-          <source src="./static/videos/pi0_orderly_fail.mp4" type="video/mp4">
-        </video>
-        <div class="video-card-label">
-          π0 · Orderly Clutter · 4x
-        </div>
-      </div>
-      <div class="video-card">
-        <video controls muted loop playsinline style="width:100%; display:block;">
-          <source src="./static/videos/pi05_sim_random_success_good_maneuvering.mp4" type="video/mp4">
-        </video>
-        <div class="video-card-label">
-          π0.5 · Random Clutter · 4x
-        </div>
-      </div>
-      <div class="video-card">
-        <video controls muted loop playsinline style="width:100%; display:block;">
-          <source src="./static/videos/pi05_sim_random_success_object_drop.mp4" type="video/mp4">
-        </video>
-        <div class="video-card-label">
-          π0.5 · Random Clutter · 4x
-        </div>
-      </div>
-      <div class="video-card">
-        <video controls muted loop playsinline style="width:100%; display:block;">
-          <source src="./static/videos/pi05_complicated_fail.mp4" type="video/mp4">
-        </video>
-        <div class="video-card-label">
-          π0.5 · Complicated Clutter · 4x
-        </div>
-      </div>
-    </div>-->
-    <!-- <div class="video-grid">
-      <div class="video-card">
-        <div class="video-placeholder">
-          <div class="play-btn">▶</div>
-          <span>Orderly &amp; Random Clutter</span>
-          <span class="sub">Zero-shot rollouts</span>
-        </div>
-        <div class="video-card-label">
-          <span class="dot dot-sim"></span> Simulation · Orderly &amp; Random
-        </div>
-      </div>
-      <div class="video-card">
-        <div class="video-placeholder">
-          <div class="play-btn">▶</div>
-          <span>Complex &amp; Temporal Dynamic</span>
-          <span class="sub">Zero-shot rollouts</span>
-        </div>
-        <div class="video-card-label">
-          <span class="dot dot-sim"></span> Simulation · Complex &amp; Temporal
-        </div>
-      </div>
-    </div> -->
+    </div>
   </section>
 
   <!-- ============================================================
        Real-World Results
        ============================================================ -->
-  <section id="realworld">
+      <section id="realworld">
+        <h2 class="section-title">Real-World: Zero-Shot Evaluation (3 Models)</h2>
+        <p class="lead">
+          Only models with official DROID-finetuned checkpoints evaluated. Orderly, Random, and Complex Clutter.
+        </p>
+      
+        <div class="tab-group">
+          <button class="tab active" onclick="showTab('rw-orderly', this, 'rw-tabs')">Orderly</button>
+          <button class="tab"        onclick="showTab('rw-random',  this, 'rw-tabs')">Random</button>
+          <button class="tab"        onclick="showTab('rw-complex', this, 'rw-tabs')">Complex</button>
+        </div>
+      
+        <div class="table-wrap" id="rw-tabs">
+      
+          <div id="rw-orderly">
+            <table>
+              <thead><tr><th>Model</th><th>Level 1</th><th>Level 2</th><th>Level 3</th><th>Avg</th></tr></thead>
+              <tbody>
+                <tr><td>π0.5-DROID</td>      <td class="best">60%</td> <td class="best">52%</td> <td class="best">52%</td> <td class="best">54.7%</td></tr>
+                <tr><td>π0-FAST-DROID</td>   <td>44%</td>              <td>32%</td>              <td>36%</td>              <td>37.3%</td></tr>
+                <tr><td>π0-DROID</td>        <td>0%</td>               <td>4%</td>               <td>0%</td>               <td>1.3%</td></tr>
+              </tbody>
+            </table>
+      
+            <div class="video-grid-3">
+              <div class="video-card">
+                <video controls muted loop playsinline style="width:100%; display:block;">
+                  <source src="./static/videos/pi0_real_orderly_fail.mp4" type="video/mp4">
+                </video>
+                <div class="video-card-label">π0 · 4x</div>
+              </div>
+              <div class="video-card">
+                <video controls muted loop playsinline style="width:100%; display:block;">
+                  <source src="./static/videos/pi0fast_real_orderly_fail.mp4" type="video/mp4">
+                </video>
+                <div class="video-card-label">π0-FAST · 8x</div>
+              </div>
+              <div class="video-card">
+                <video controls muted loop playsinline style="width:100%; display:block;">
+                  <source src="./static/videos/pi05_real_orderly.mp4" type="video/mp4">
+                </video>
+                <div class="video-card-label">π0.5 · 4x</div>
+              </div>
+            </div>
+          </div>
+      
+          <div id="rw-random" style="display:none">
+            <table>
+              <thead><tr><th>Model</th><th>Level 1</th><th>Level 2</th><th>Level 3</th><th>Avg</th></tr></thead>
+              <tbody>
+                <tr><td>π0.5-DROID</td>      <td class="best">60%</td> <td class="best">76%</td> <td class="best">36%</td> <td class="best">57.3%</td></tr>
+                <tr><td>π0-FAST-DROID</td>   <td>44%</td>              <td>24%</td>              <td>16%</td>              <td>28.0%</td></tr>
+                <tr><td>π0-DROID</td>        <td>24%</td>              <td>24%</td>              <td>0%</td>               <td>16.0%</td></tr>
+              </tbody>
+            </table>
+      
+            <div class="video-grid-3">
+              <div class="video-card">
+                <video controls muted loop playsinline style="width:100%; display:block;">
+                  <source src="./static/videos/pi0_real_random.mp4" type="video/mp4">
+                </video>
+                <div class="video-card-label">π0 · 8x</div>
+              </div>
+              <div class="video-card">
+                <video controls muted loop playsinline style="width:100%; display:block;">
+                  <source src="./static/videos/pifast_real_random.mp4" type="video/mp4">
+                </video>
+                <div class="video-card-label">π0-FAST · 8x</div>
+              </div>
+              <div class="video-card">
+                <video controls muted loop playsinline style="width:100%; display:block;">
+                  <source src="./static/videos/real-example.mp4" type="video/mp4">
+                </video>
+                <div class="video-card-label">π0.5 · 4x</div>
+              </div>
+            </div>
+          </div>
+      
+          <div id="rw-complex" style="display:none">
+            <table>
+              <thead><tr><th>Model</th><th>Level 1</th><th>Level 2</th><th>Level 3</th><th>Avg</th></tr></thead>
+              <tbody>
+                <tr><td>π0-FAST-DROID</td>   <td class="best">73.3%</td> <td>0.0%</td>               <td class="best">33.3%</td> <td class="best">35.5%</td></tr>
+                <tr><td>π0.5-DROID</td>      <td>33.3%</td>              <td class="best">10.0%</td>  <td>0.0%</td>               <td>14.4%</td></tr>
+                <tr><td>π0-DROID</td>        <td>0.0%</td>               <td>10.0%</td>              <td>0.0%</td>               <td>3.3%</td></tr>
+              </tbody>
+            </table>
+      
+            <div class="video-grid-3">
+              <div class="video-card">
+                <video controls muted loop playsinline style="width:100%; display:block;">
+                  <source src="./static/videos/pi0_real_complex.mp4" type="video/mp4">
+                </video>
+                <div class="video-card-label">π0 · 8x</div>
+              </div>
+              <div class="video-card">
+                <video controls muted loop playsinline style="width:100%; display:block;">
+                  <source src="./static/videos/pifast_real_complex.mp4" type="video/mp4">
+                </video>
+                <div class="video-card-label">π0-FAST · 4x</div>
+              </div>
+              <div class="video-card">
+                <video controls muted loop playsinline style="width:100%; display:block;">
+                  <source src="./static/videos/pi05_real_complex.mp4" type="video/mp4">
+                </video>
+                <div class="video-card-label">π0.5 · 8x</div>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </section>
+  <!-- <section id="realworld">
     <h2 class="section-title">Real-World: Zero-Shot Evaluation (3 Models)</h2>
     <p class="lead">
-      Only models with official DROID-finetuned checkpoints evaluated. Orderly and Random Clutter
-      across 3 levels — 5 configurations × 5 trials = 25 trials per level.
-      Complex and Temporal suites not covered yet.
+      Only models with official DROID-finetuned checkpoints evaluated. Orderly, Random, and Complex Clutter.
     </p>
 
     <div class="rw-grid">
@@ -551,13 +554,6 @@
       </div>
     </div>
 
-    <!-- <div class="note-box">
-      <strong>Consistent failure modes across platforms:</strong> Insufficient positioning accuracy,
-      getting stuck by surrounding obstacles, and task-irrelevant behaviors appear identically in
-      simulation and real-world rollouts — suggesting these are model limitations, not platform artifacts.
-    </div> -->
-
-    <!-- Real-world video placeholders -->
     <div class="video-grid">
       <div class="video-card">
         <video controls muted loop playsinline style="width:100%; display:block;">
@@ -592,7 +588,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
   <!-- ============================================================
        Fine-Tuning
@@ -622,7 +618,7 @@
           </tbody>
         </table>
 
-        <div class="video-grid">
+        <div class="video-grid-4">
           <div class="video-card">
             <video controls muted loop playsinline style="width:100%; display:block;">
               <source src="./static/videos/pi0_orderly_ft.mp4" type="video/mp4">
@@ -669,7 +665,7 @@
           </tbody>
         </table>
         
-        <div class="video-grid">
+        <div class="video-grid-4">
           <div class="video-card">
             <video controls muted loop playsinline style="width:100%; display:block;">
               <source src="./static/videos/pi0_random_ft.mp4" type="video/mp4">
@@ -705,60 +701,7 @@
         </div>
       </div>
 
-    </div><!-- /ft-tabs -->
-
-    <!-- <div class="note-box">
-      <strong>Success rate ≠ safety:</strong> π0 improves from 7.4% → 91.0% on orderly clutter
-      yet object displacement stays nearly unchanged (0.127 m) — it reaches the target through
-      more collisions, not better avoidance. Object displacement is essential for assessing true
-      manipulation quality.
     </div>
-  </section> -->
-
-  <!-- <section id="extend">
-    <h2 class="section-title">Easily Extendable</h2>
-    <p class="lead">
-      All 88 simulation tasks are procedurally generated from configuration files.
-      We release the full generation toolkit so researchers can create custom cluttered scenes,
-      add new models, and scale the benchmark with minimal effort.
-    </p>
-
-    <div class="extend-grid">
-      <div class="extend-card">
-        <h4>⚙️ Configurable Scene Generation</h4>
-        <p>Adjust grid size, spacing, rings, safe sectors, furniture type, and perturbation timing.
-           All parameters exposed in YAML — no simulation expertise required.</p>
-        <div class="code-snippet"># Custom orderly clutter scene
-rows: 5, cols: 5
-spacing: 0.10     # tighter than default
-n_configs: 20
-target_positions: [center, edge]</div>
-      </div>
-      <div class="extend-card">
-        <h4>🤖 Plug in Any VLA Model</h4>
-        <p>Unified evaluation protocol works with any LIBERO-finetuned checkpoint.
-           Adding a new model requires only a lightweight wrapper matching the standard action interface.</p>
-        <div class="code-snippet">python evaluate.py \
-  --model your_vla_checkpoint \
-  --suite orderly random complex \
-  --metrics sr displacement steps</div>
-      </div>
-      <div class="extend-card">
-        <h4>📐 Multi-Metric Evaluation</h4>
-        <p>Beyond success rate, the framework reports non-target object displacement and
-           execution time out of the box — enabling fine-grained assessment of trajectory
-           safety and efficiency.</p>
-      </div>
-      <div class="extend-card">
-        <h4>🌍 Real-World Transfer</h4>
-        <p>Grid-based and sector-ring designs transfer directly to physical setups.
-           Common household objects serve as obstacles — no specialized props or
-           motion capture required.</p>
-      </div>
-    </div>
-  </section>
-
-  <hr> -->
 
   <!-- ============================================================
        Key Findings
@@ -780,15 +723,14 @@ target_positions: [center, edge]</div>
         <div class="finding-num">02</div>
         <div class="finding-title">Success Rate Overestimates Quality</div>
         <div class="finding-body">
-          Object displacement reveals many successful executions still involve significant collisions.
-          Fine-tuning improves SR without improving obstacle avoidance — a gap SR alone cannot detect.
+          Object displacement reveals many successful executions involve significant collisions. Success rate alone does not imply quality of execution.
         </div>
       </div>
       <div class="finding-card">
         <div class="finding-num">03</div>
         <div class="finding-title">Simulation Predicts Real-World</div>
         <div class="finding-body">
-          Rankings (π0.5 &gt; π0-FAST &gt; π0) and failure modes are identical across platforms, validating
+          Rankings (π0.5 &gt; π0-FAST &gt; π0) and failure modes are consistent across platforms, validating
           simulation as a reliable proxy.
         </div>
       </div>
